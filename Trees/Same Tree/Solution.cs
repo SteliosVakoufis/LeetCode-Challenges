@@ -12,7 +12,7 @@ namespace Same_Tree
         private void TraverseTree(TreeNode? p, TreeNode? q, ref bool isSame)
         {
             if (p is null && q is null) return;
-            if ((p is null && q is not null) || (q is null && p is not null) || p.val != q.val)
+            if ((p is null && q is not null) || (q is null && p is not null) || p!.val != q!.val)
             {
                 isSame = false;
                 return;
