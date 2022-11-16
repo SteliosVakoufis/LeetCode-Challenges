@@ -22,7 +22,7 @@ namespace Last_Stone_Weight
         {
             int[] input = { 2, 7, 4, 1, 8, 1 };
 
-            Assert.AreEqual(_solution?.LastStoneWeight(input), 1);
+            Assert.AreEqual(1, _solution?.LastStoneWeight(input));
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace Last_Stone_Weight
         {
             int[] input = { 1 };
 
-            Assert.AreEqual(_solution?.LastStoneWeight(input), 1);
+            Assert.AreEqual(1, _solution?.LastStoneWeight(input));
         }
 
     }
