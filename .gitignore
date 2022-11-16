@@ -1,6 +1,9 @@
 #vscode
 .vscode/
 
+#vs
+.vs/
+
 #intellij
 .idea/
 *.iml
