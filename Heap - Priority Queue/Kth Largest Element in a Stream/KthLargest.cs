@@ -7,14 +7,29 @@ namespace Kth_Largest_Element_in_a_Stream
 {
     public class KthLargest
     {
+        private PriorityQueue<int, int> Stream;
+        private int Kth;
+
         public KthLargest(int k, int[] nums)
         {
+            Stream = new();
+            Kth = k;
+
+            foreach(int num in nums)
+            {
+                Add(num);
+            }
 
         }
 
-        public int Add(int val)
+        public int Add(int value)
         {
-            return 0;
+            this.Stream.Enqueue(value, value);
+            
+            while (this.Stream.Count > Kth)
+                this.Stream.Dequeue();
+
+            return this.Stream.Peek();
         }
     }
 }
