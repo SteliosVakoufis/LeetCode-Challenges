@@ -8,10 +8,13 @@ namespace _1_D_Dynamic_Programming
 {
     public class Solution
     {
+        private Dictionary<int, int> _solutions;
+
         public int ClimbStairs(int n)
         {
-            int count = 0;
+            _solutions = new();
 
+            int count = 0;
             Climb(n, ref count);
 
             return count;
@@ -19,6 +22,12 @@ namespace _1_D_Dynamic_Programming
 
         private void Climb(int steps, ref int count)
         {
+            if (_solutions.ContainsKey(steps))
+            {
+                count += _solutions[steps];
+                return;
+            }
+
             if (steps == 0)
             {
                 count++;
@@ -28,6 +37,8 @@ namespace _1_D_Dynamic_Programming
             Climb(steps - 1, ref count);
             if (steps >= 2)
                 Climb(steps - 2, ref count);
+
+            _solutions.Add(steps, count);
         }
     }
 }
