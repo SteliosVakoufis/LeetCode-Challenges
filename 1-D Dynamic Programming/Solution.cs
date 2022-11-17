@@ -10,7 +10,24 @@ namespace _1_D_Dynamic_Programming
     {
         public int ClimbStairs(int n)
         {
-            return 0;
+            int count = 0;
+
+            Climb(n, ref count);
+
+            return count;
+        }
+
+        private void Climb(int steps, ref int count)
+        {
+            if (steps == 0)
+            {
+                count++;
+                return;
+            }
+
+            Climb(steps - 1, ref count);
+            if (steps >= 2)
+                Climb(steps - 2, ref count);
         }
     }
 }
